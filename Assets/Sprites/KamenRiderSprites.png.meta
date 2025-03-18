@@ -1,0 +1,1253 @@
+fileFormatVersion: 2
+guid: f03ee2a868ee61f45aaaf9aee83f4af1
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: KamenRiderSprites_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 579
+        width: 69
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb77a28c7a67398448cc1543775b3ec0
+      internalID: 307646907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_1
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 579
+        width: 69
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 168fbadcfb6b07b4cbf4c83ccc014a45
+      internalID: -1424999214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_2
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 579
+        width: 75
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81e3daaa41b4edb408c02f87bfdcb518
+      internalID: -397539721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_3
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 579
+        width: 69
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 695d7634772753247812d9211f5eaff5
+      internalID: 498167643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_4
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 579
+        width: 69
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab51fb057465a524a876051ecb33be63
+      internalID: -912052157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_5
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 579
+        width: 75
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f767aa1c3d865145a28c2a3199f1546
+      internalID: -1994234398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_6
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 579
+        width: 69
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 703e909dd6a6fd646933c014141d7493
+      internalID: -1257031735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_7
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 579
+        width: 75
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd7c04a0fac79c04db6a448e1b445220
+      internalID: 1507028748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_8
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 579
+        width: 69
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f99bd648b33e5424e9b27948c10cb42f
+      internalID: -1346245374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_9
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 579
+        width: 72
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c4bd1b4834193247a08868d2248e882
+      internalID: 852076177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_10
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 435
+        width: 72
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74fd50152b548894f9da951253323aec
+      internalID: 809837111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_11
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 435
+        width: 69
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9ed4e16b559b654d9a19b7dee1959c1
+      internalID: 1866963376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_12
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 435
+        width: 78
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f50d8cb32bdc38409f6cea01df76931
+      internalID: 104432419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_13
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 435
+        width: 69
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faa2153192931664eaaa4317d4a8fcc9
+      internalID: 28564785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_14
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 435
+        width: 72
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec006cca972a7284ab918bcf2d09dbe8
+      internalID: 1728145399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_15
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 435
+        width: 69
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 668596cba942f994892ff839e909267d
+      internalID: -1226356206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_16
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 435
+        width: 69
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed6c0a3ac925aa4449ff924dc645ed7e
+      internalID: -146108254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_17
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 435
+        width: 72
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59737625b4f425d40917864046377cd7
+      internalID: -1146427522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_18
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 435
+        width: 72
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 530b0498950f3894c8d3979a390d0520
+      internalID: -355197593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_19
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 435
+        width: 63
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b21a1d04b9065674dbb11b0cf6dd4601
+      internalID: 631526314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_20
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 291
+        width: 69
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe3ec6b85d5952b47bef4d5539cb013c
+      internalID: 1714483622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_21
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 291
+        width: 75
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c60846f97aafff441b263255f5c56a2b
+      internalID: 1061912841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_22
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 291
+        width: 75
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d3c4672b3e4cd84da340d9764d8037d
+      internalID: -1663959050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_23
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 291
+        width: 75
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 848b3f00b81a8c24da52251d51723bb3
+      internalID: -1840443145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_24
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 291
+        width: 72
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7654241b7103cba40856dc15d873cd0a
+      internalID: 1356212097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_25
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 291
+        width: 69
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5012d87f990ba0944b453ff04bc206e1
+      internalID: 2054858984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_26
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 291
+        width: 69
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60ed59b6e71bede4f8e6bd8d024d75f1
+      internalID: 1369343315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_27
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 291
+        width: 69
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f783aafea24bd5d47869c382ec6dab1f
+      internalID: -1676103724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_28
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 291
+        width: 75
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b60a0e8b51d8b564ebe29c8e87bbc700
+      internalID: 1062758628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_29
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 291
+        width: 69
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5beb4f8fca584e2489d880259e7ebc4d
+      internalID: 1123181444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_30
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 147
+        width: 69
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f00adac50fdde484cbd97c8a54be4783
+      internalID: 1141723114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_31
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 147
+        width: 69
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5318aea508873264fa78b4c9fc935391
+      internalID: 469827173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_32
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 147
+        width: 69
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bac30f7e05e0384588cd8e7bb83df14
+      internalID: 565067300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_33
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 147
+        width: 75
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe0b3a94ebd96684ea158cc1e8fcb63b
+      internalID: 1616261989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_34
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 147
+        width: 69
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed55338bece7abb40ba134dad7e4c73c
+      internalID: -440546043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_35
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 147
+        width: 69
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f3b2fb5e4711ad45a8637f193dbb090
+      internalID: -505285779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_36
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 147
+        width: 69
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f707391b3b17ca649a99f975d4543c8c
+      internalID: -1528576232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_37
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 147
+        width: 72
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96108adda3d1f534895862d0d7046c8c
+      internalID: 1885814786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_38
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 147
+        width: 78
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d9d72bc49248134fa858c4a80985316
+      internalID: -1416275942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_39
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 147
+        width: 69
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91c30fde9f4d38e4fab2830952bdcbdc
+      internalID: -1849341982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_40
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 3
+        width: 87
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a0c62778b2a66340b1994651f6af6f0
+      internalID: 1876389852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_41
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 3
+        width: 69
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9f63773561beca43a1743ae8a82eeb0
+      internalID: 951967541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_42
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 3
+        width: 84
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0446f732e7d5564ea799287f2eb40b1
+      internalID: -1091086782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_43
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 3
+        width: 81
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daa100a1203a8ea46841a8d2fb24bc89
+      internalID: 1366294026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_44
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 3
+        width: 72
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 935b8750981ce1242afe6c069772e836
+      internalID: 1181213887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_45
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 3
+        width: 78
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 044e1e88c27bbe04c98b0063547e4159
+      internalID: 387729701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_46
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 3
+        width: 69
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9986b09f2d1708f49a4f1ae926a70daa
+      internalID: -37350920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_47
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 3
+        width: 69
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89203f95d65bc064c90882f68158e43f
+      internalID: 1304177393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_48
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 3
+        width: 69
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45936c58d80caf749a51e43cc933fe8e
+      internalID: 173086192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamenRiderSprites_49
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 3
+        width: 72
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87fc13a9241fcf34e8ef804382260033
+      internalID: 560271940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      KamenRiderSprites_0: 307646907
+      KamenRiderSprites_1: -1424999214
+      KamenRiderSprites_10: 809837111
+      KamenRiderSprites_11: 1866963376
+      KamenRiderSprites_12: 104432419
+      KamenRiderSprites_13: 28564785
+      KamenRiderSprites_14: 1728145399
+      KamenRiderSprites_15: -1226356206
+      KamenRiderSprites_16: -146108254
+      KamenRiderSprites_17: -1146427522
+      KamenRiderSprites_18: -355197593
+      KamenRiderSprites_19: 631526314
+      KamenRiderSprites_2: -397539721
+      KamenRiderSprites_20: 1714483622
+      KamenRiderSprites_21: 1061912841
+      KamenRiderSprites_22: -1663959050
+      KamenRiderSprites_23: -1840443145
+      KamenRiderSprites_24: 1356212097
+      KamenRiderSprites_25: 2054858984
+      KamenRiderSprites_26: 1369343315
+      KamenRiderSprites_27: -1676103724
+      KamenRiderSprites_28: 1062758628
+      KamenRiderSprites_29: 1123181444
+      KamenRiderSprites_3: 498167643
+      KamenRiderSprites_30: 1141723114
+      KamenRiderSprites_31: 469827173
+      KamenRiderSprites_32: 565067300
+      KamenRiderSprites_33: 1616261989
+      KamenRiderSprites_34: -440546043
+      KamenRiderSprites_35: -505285779
+      KamenRiderSprites_36: -1528576232
+      KamenRiderSprites_37: 1885814786
+      KamenRiderSprites_38: -1416275942
+      KamenRiderSprites_39: -1849341982
+      KamenRiderSprites_4: -912052157
+      KamenRiderSprites_40: 1876389852
+      KamenRiderSprites_41: 951967541
+      KamenRiderSprites_42: -1091086782
+      KamenRiderSprites_43: 1366294026
+      KamenRiderSprites_44: 1181213887
+      KamenRiderSprites_45: 387729701
+      KamenRiderSprites_46: -37350920
+      KamenRiderSprites_47: 1304177393
+      KamenRiderSprites_48: 173086192
+      KamenRiderSprites_49: 560271940
+      KamenRiderSprites_5: -1994234398
+      KamenRiderSprites_6: -1257031735
+      KamenRiderSprites_7: 1507028748
+      KamenRiderSprites_8: -1346245374
+      KamenRiderSprites_9: 852076177
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
