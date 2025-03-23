@@ -1,85 +1,38 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public Color color;
-    public Sprite sprite;
-    public GameObject prefab;
+    [Header("UI Elements")]
+    [SerializeField] private Image[] colorButtons;
+    [SerializeField] private Image[] spriteButtons;
 
-    public float doubleTapThreshold = 0.5f;
+    [Header("References")]
+    [SerializeField] private SpriteObjectsManager spriteObjectsManager;
 
-    private float lastTapTime = 0;
-    private bool isWaitingForDoubleTap = false;
-    public void SetColor(Image image)
+    private void Start()
     {
-        this.color = image.color;
-    }
-    public void SetSprite(Image image)
-    {
-        this.sprite = image.sprite;
-    }
-    private void Update()
-    {
-        HandleTouchInput();
+        InitializeColorButtons();
+        InitializeSpriteButtons();
     }
 
-    void HandleTouchInput()
+    private void InitializeColorButtons()
     {
-        if (Input.touchCount == 1)
+        for (int i = 0; i < colorButtons.Length; ++i)
         {
-            Touch touch = Input.GetTouch(0);
-
-            if (touch.phase == TouchPhase.Began)
-            {
-                if (Time.time - lastTapTime <= doubleTapThreshold)
-                {
-
-                    lastTapTime = 0;
-                    isWaitingForDoubleTap = false;
-                    StopAllCoroutines();
-
-                    Vector2 worldPos = GetRealPosition(touch.position);
-                    RaycastHit2D hit = Physics2D.Raycast(worldPos, Vector2.zero);
-
-                    if (hit.collider != null)
-                    {
-                        Destroy(hit.collider.gameObject);
-                    }
-                }
-                else
-                {
-                    lastTapTime = Time.time;
-                    StartCoroutine(SingleTapCoroutine(touch.position));
-                }
-            }
+            int index = i;
+            Button btn = colorButtons[index].gameObject.GetComponent<Button>();
+            btn.onClick.AddListener(() => spriteObjectsManager.SetActiveColor(colorButtons[index].color));
         }
     }
 
-    IEnumerator SingleTapCoroutine(Vector2 touchPos)
+    private void InitializeSpriteButtons()
     {
-        isWaitingForDoubleTap = true;
-        yield return new WaitForSeconds(doubleTapThreshold);
-
-        if (isWaitingForDoubleTap == true)
+        for (int i = 0; i < spriteButtons.Length; ++i)
         {
-            if (color != null && sprite != null && prefab != null)
-            {
-                GameObject rider = Instantiate(prefab, GetRealPosition(touchPos), prefab.transform.rotation);
-                rider.SetActive(false);
-                SpriteRenderer spriteRenderer = rider.GetComponent<SpriteRenderer>();
-                spriteRenderer.color = color;
-                spriteRenderer.sprite = sprite;
-                rider.SetActive(true);
-            }
-            isWaitingForDoubleTap = false;
+            int index = i;
+            Button btn = spriteButtons[index].GetComponent<Button>();
+            btn.onClick.AddListener(() => spriteObjectsManager.SetActiveSprite(spriteButtons[index].sprite));
         }
-    }
-
-    public Vector2 GetRealPosition(Vector2 position)
-    {
-        return Camera.main.ScreenToWorldPoint(position);
     }
 }
