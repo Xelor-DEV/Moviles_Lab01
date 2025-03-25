@@ -1,19 +1,19 @@
 using UnityEngine;
 using UnityEngine.Events;
-using System.Collections;
 
 public class TouchInputController : MonoBehaviour
 {
+    [Header("Swipe Settings")]
+    [SerializeField, Range(0.1f, 2f)] private float swipeDuration = 0.5f;
 
-    [Header("Settings")]
+    [Header("Other Settings")]
     [SerializeField, Range(0.1f, 1f)] private float doubleTapThreshold = 0.2f;
     [SerializeField, Range(0.1f, 1f)] private float holdThreshold = 0.4f;
-    [SerializeField, Range(0.1f, 1f)] private float swipeMaxTime = 0.3f;
     [SerializeField, Min(10)] private float doubleTapRadius = 50f;
-    [SerializeField, Min(50)] private float swipeMinDistance = 100f;
 
     [Header("References")]
     [SerializeField] private TrailRenderer swipeTrail;
+    [SerializeField] private Camera mainCamera;
 
     [Header("Events")]
     public UnityEvent<Vector2> OnTap;
@@ -21,17 +21,23 @@ public class TouchInputController : MonoBehaviour
     public UnityEvent<Vector2> OnDragStart;
     public UnityEvent<Vector2> OnDrag;
     public UnityEvent OnDragEnd;
-    public UnityEvent<Vector2> OnSwipe;
+    public UnityEvent OnSwipeStart;
+    public UnityEvent<Vector2> OnSwipeUpdate;
+    public UnityEvent<Vector2> OnSwipeEnd;
 
     private Vector2 touchStartPos;
+    private Vector2 currentTouchPos;
     private float touchStartTime;
     private Vector2 lastTapPos;
     private float lastTapTime;
     private bool isDragging;
-    private bool isWaitingForDoubleTap;
-    private Coroutine doubleTapCoroutine;
+    private bool doubleTapHandled;
+    private GameObject draggedObject;
+    private bool isSwiping;
+    private float swipeProgress;
+    private Coroutine swipeRoutine;
 
-    private void Update() 
+    private void Update()
     {
         HandleTouchInput();
     }
@@ -53,9 +59,6 @@ public class TouchInputController : MonoBehaviour
                     break;
 
                 case TouchPhase.Ended:
-                    HandleTouchEnd(touch);
-                    break;
-
                 case TouchPhase.Canceled:
                     HandleTouchEnd(touch);
                     break;
@@ -65,98 +68,166 @@ public class TouchInputController : MonoBehaviour
 
     private void HandleTouchBegan(Touch touch)
     {
-        Vector2 currentPos = touch.position;
-        touchStartPos = currentPos;
+        touchStartPos = touch.position;
+        currentTouchPos = touch.position;
         touchStartTime = Time.time;
+        isDragging = false;
+        doubleTapHandled = false;
+        isSwiping = false;
+        swipeProgress = 0f;
+
+        Vector2 worldPos = GetWorldPosition(touch.position);
+        RaycastHit2D hit = Physics2D.Raycast(worldPos, Vector2.zero);
 
         if (Time.time - lastTapTime <= doubleTapThreshold &&
-            Vector2.Distance(currentPos, lastTapPos) <= doubleTapRadius)
+            Vector2.Distance(touch.position, lastTapPos) <= doubleTapRadius)
         {
-            if (doubleTapCoroutine != null)
-            {
-                StopCoroutine(doubleTapCoroutine);
-            }
-            isWaitingForDoubleTap = false;
-            OnDoubleTap?.Invoke(GetWorldPosition(currentPos));
+            OnDoubleTap?.Invoke(worldPos);
+            doubleTapHandled = true;
             lastTapTime = 0;
+            lastTapPos = Vector2.zero;
+            SetTrailActive(false);
             return;
         }
 
-        if (isDragging == false)
+        if (hit.collider != null)
         {
-            lastTapTime = Time.time;
-            lastTapPos = currentPos;
-            if (doubleTapCoroutine != null)
-            {
-                StopCoroutine(doubleTapCoroutine);
-            }
-            doubleTapCoroutine = StartCoroutine(SingleTapCheck(currentPos));
+            draggedObject = hit.collider.gameObject;
+            isDragging = true;
+            OnDragStart?.Invoke(worldPos);
         }
 
-        if (swipeTrail != null)
-        {
-            swipeTrail.Clear();
-            swipeTrail.emitting = true;
-        }
+        lastTapPos = touch.position;
+        lastTapTime = Time.time;
     }
 
-    private IEnumerator SingleTapCheck(Vector2 touchPos)
-    {
-        isWaitingForDoubleTap = true;
-        yield return new WaitForSeconds(doubleTapThreshold);
-
-        if (isWaitingForDoubleTap)
-        {
-            OnTap?.Invoke(GetWorldPosition(touchPos));
-            isWaitingForDoubleTap = false;
-        }
-    }
     private void HandleTouchMove(Touch touch)
     {
-        if (isDragging == true)
+        currentTouchPos = touch.position;
+
+        if (isDragging && draggedObject != null)
         {
-            OnDrag?.Invoke(GetWorldPosition(touch.position));
+            Vector2 newPos = GetWorldPosition(touch.position);
+            draggedObject.transform.position = newPos;
+            OnDrag?.Invoke(newPos);
             return;
         }
 
-        if (Time.time - touchStartTime >= holdThreshold)
+        if (!isDragging && !isSwiping)
         {
-            isDragging = true;
-            OnDragStart?.Invoke(GetWorldPosition(touch.position));
+            StartSwipe();
         }
 
+        if (isSwiping)
+        {
+            UpdateSwipeProgress();
+        }
+    }
+
+    private void StartSwipe()
+    {
+        isSwiping = true;
+        swipeProgress = 0f;
+        OnSwipeStart?.Invoke();
+        SetTrailActive(true);
+        UpdateTrailPosition(currentTouchPos);
+        StartCoroutine(SwipeTimer());
+    }
+
+    private System.Collections.IEnumerator SwipeTimer()
+    {
+        float startTime = Time.time;
+        Vector2 startPos = currentTouchPos;
+
+        while (isSwiping && (Time.time - startTime) < swipeDuration)
+        {
+            float progress = (Time.time - startTime) / swipeDuration;
+            swipeProgress = progress;
+
+            Vector2 currentDirection = (currentTouchPos - startPos).normalized;
+            OnSwipeUpdate?.Invoke(currentDirection);
+
+            UpdateTrailPosition(currentTouchPos);
+            yield return null;
+        }
+
+        if (isSwiping)
+        {
+            FinalizeSwipe(startPos, currentTouchPos);
+        }
+    }
+
+    private void UpdateSwipeProgress()
+    {
         if (swipeTrail != null)
         {
-            swipeTrail.transform.position = GetWorldPosition(touch.position);
+            swipeTrail.time = Mathf.Lerp(0, swipeDuration, swipeProgress);
         }
     }
 
     private void HandleTouchEnd(Touch touch)
     {
-        float swipeDistance = Vector2.Distance(touchStartPos, touch.position);
-        float swipeDuration = Time.time - touchStartTime;
-
-        if (swipeDistance >= swipeMinDistance && swipeDuration <= swipeMaxTime)
+        if (doubleTapHandled)
         {
-            OnSwipe?.Invoke(GetWorldPosition(touch.position));
+            SetTrailActive(false);
+            return;
         }
 
-        if (isDragging == true)
+        if (isSwiping)
+        {
+            Vector2 endPos = touch.position;
+            FinalizeSwipe(touchStartPos, endPos);
+        }
+        else
+        {
+            float elapsedTime = Time.time - touchStartTime;
+
+            if (!isDragging && elapsedTime < 0.15f)
+            {
+                OnTap?.Invoke(GetWorldPosition(touch.position));
+            }
+        }
+
+        if (isDragging)
         {
             OnDragEnd?.Invoke();
-        }
-
-        if (swipeTrail != null)
-        {
-            swipeTrail.emitting = false;
+            draggedObject = null;
         }
 
         isDragging = false;
-        isWaitingForDoubleTap = false;
+        isSwiping = false;
+    }
+
+    private void FinalizeSwipe(Vector2 startPos, Vector2 endPos)
+    {
+        Vector2 swipeVector = endPos - startPos;
+        Vector2 swipeDirection = swipeVector.normalized;
+
+        OnSwipeEnd?.Invoke(swipeDirection);
+        SetTrailActive(false);
+        isSwiping = false;
+    }
+
+    private void SetTrailActive(bool active)
+    {
+        if (swipeTrail != null)
+        {
+            swipeTrail.emitting = active;
+            swipeTrail.gameObject.SetActive(active);
+            if (!active) swipeTrail.Clear();
+        }
+    }
+
+    private void UpdateTrailPosition(Vector2 screenPos)
+    {
+        if (swipeTrail != null)
+        {
+            swipeTrail.transform.position = GetWorldPosition(screenPos);
+        }
     }
 
     private Vector2 GetWorldPosition(Vector2 screenPos)
     {
-        return Camera.main.ScreenToWorldPoint(screenPos);
+        return mainCamera.ScreenToWorldPoint(screenPos);
     }
 }

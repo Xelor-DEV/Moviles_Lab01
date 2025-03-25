@@ -160,7 +160,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -191,7 +191,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.3
+        value: 0.52387697
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -851,7 +851,7 @@ MonoBehaviour:
   - {fileID: 169555988}
   - {fileID: 1354702710}
   - {fileID: 1300760017}
-  spriteObjectsManager: {fileID: 1769946253}
+  brushSettings: {fileID: 11400000, guid: 28ad7ee781a0d9b45bd2507b79045c29, type: 2}
 --- !u!4 &564625831
 Transform:
   m_ObjectHideFlags: 0
@@ -924,7 +924,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 3b40935eb80b71949b27bcdd4db95a83, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1541,17 +1541,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1245185516}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a2cbad7dee84a048b856a91de6157ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swipeDuration: 0.4
   doubleTapThreshold: 0.2
-  holdThreshold: 0.4
-  swipeMaxTime: 0.3
+  holdThreshold: 0.35
   doubleTapRadius: 50
-  swipeMinDistance: 100
   swipeTrail: {fileID: 145936228}
+  mainCamera: {fileID: 330585545}
   OnTap:
     m_PersistentCalls:
       m_Calls:
@@ -1627,7 +1627,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnSwipe:
+  OnSwipeStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSwipeUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSwipeEnd:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1769946253}
@@ -1929,6 +1935,212 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: -5, y: -5}
   m_UseGraphicAlpha: 1
+--- !u!1 &1423957027
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1423957030}
+  - component: {fileID: 1423957029}
+  - component: {fileID: 1423957028}
+  m_Layer: 0
+  m_Name: TouchNewInputSystemManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1423957028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423957027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5726129f1b1fd0a4b9263be12170aaf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input: {fileID: 1423957029}
+  touchPositionAction:
+    m_Name: Touch Position
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 22e7caa1-b016-4d61-bb20-58049234a691
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  touchPressAction:
+    m_Name: Touch Press
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 1dd2d0ab-3f28-4380-b466-1f4d7d0a80ba
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  doubleTapThreshold: 0.2
+  tapTimeThreshold: 0.3
+  dragThreshold: 10
+  swipeDistanceThreshold: 50
+  swipeSpeedThreshold: 50
+  swipeTrail: {fileID: 145936228}
+  brushSettings: {fileID: 11400000, guid: 28ad7ee781a0d9b45bd2507b79045c29, type: 2}
+  OnTap:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1769946253}
+        m_TargetAssemblyTypeName: SpriteObjectsManager, Assembly-CSharp
+        m_MethodName: CreateObject
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDoubleTap:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1769946253}
+        m_TargetAssemblyTypeName: SpriteObjectsManager, Assembly-CSharp
+        m_MethodName: DestroyObjectAtPosition
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDragStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1769946253}
+        m_TargetAssemblyTypeName: SpriteObjectsManager, Assembly-CSharp
+        m_MethodName: HandleDragStart
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDrag:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1769946253}
+        m_TargetAssemblyTypeName: SpriteObjectsManager, Assembly-CSharp
+        m_MethodName: HandleDrag
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDragEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1769946253}
+        m_TargetAssemblyTypeName: SpriteObjectsManager, Assembly-CSharp
+        m_MethodName: HandleDragEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnSwipeStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSwipeUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSwipeEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1769946253}
+        m_TargetAssemblyTypeName: SpriteObjectsManager, Assembly-CSharp
+        m_MethodName: HandleSwipe
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1423957029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423957027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 03550990511f3c34d82db4d510d93451,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2149a26a-6b0e-458c-9118-72692560b424
+    m_ActionName: Gameplay/TouchPress[/Device Simulator Touchscreen/press]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 335faf83-e195-4c48-91da-7af834c4344c
+    m_ActionName: Gameplay/TouchPosition[/Device Simulator Touchscreen/primaryTouch/position]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Gameplay
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!4 &1423957030
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423957027}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.066831976, y: 1.3014221, z: 0.034988858}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1661974043
 GameObject:
   m_ObjectHideFlags: 0
@@ -2096,9 +2308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectPrefab: {fileID: 5901081538742747752, guid: d928ec290e4108a4ea2e13065bc78fdb,
     type: 3}
-  currentSprite: {fileID: 0}
-  currentColor: {r: 0, g: 0, b: 0, a: 0}
-  swipeTrail: {fileID: 145936228}
+  brushSettings: {fileID: 11400000, guid: 28ad7ee781a0d9b45bd2507b79045c29, type: 2}
 --- !u!4 &1769946254
 Transform:
   m_ObjectHideFlags: 0
@@ -2247,3 +2457,4 @@ SceneRoots:
   - {fileID: 1769946254}
   - {fileID: 1245185518}
   - {fileID: 145936229}
+  - {fileID: 1423957030}

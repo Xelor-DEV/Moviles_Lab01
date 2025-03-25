@@ -6,12 +6,9 @@ public class SpriteObjectsManager : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private GameObject objectPrefab;
 
-    [Header("Debug")]
-    [SerializeField] private Sprite currentSprite;
-    [SerializeField] private Color currentColor;
+    [Header("BrushSettings")]
+    [SerializeField] private BrushSettings brushSettings;
 
-    [Header("Trail Settings")]
-    [SerializeField] private TrailRenderer swipeTrail;
     private GameObject selectedObject;
 
     private List<GameObject> spawnedObjects = new List<GameObject>();
@@ -40,33 +37,24 @@ public class SpriteObjectsManager : MonoBehaviour
 
     public void HandleSwipe(Vector2 position)
     {
-        if (swipeTrail != null)
+        if (brushSettings.SwipeTrail != null)
         {
-            swipeTrail.gameObject.SetActive(true);
-            swipeTrail.Clear();
-            UpdateTrailColor();
+            brushSettings.SwipeTrail.gameObject.SetActive(true);
+            brushSettings.SwipeTrail.Clear();
+            brushSettings.UpdateTrailColor();
         }
         ClearAllObjects();
-    }
-
-    private void UpdateTrailColor()
-    {
-        if (swipeTrail != null)
-        {
-            swipeTrail.startColor = currentColor;
-            swipeTrail.endColor = new Color(currentColor.r, currentColor.g, currentColor.b, 0);
-        }
     }
 
 
     public void CreateObject(Vector2 position)
     {
-        if (objectPrefab != null && currentSprite != null && currentColor.a > 0)
+        if (objectPrefab != null && brushSettings.CurrentSprite != null && brushSettings.CurrentColor.a > 0)
         {
             GameObject newObject = Instantiate(objectPrefab, position, Quaternion.identity);
             SpriteRenderer spriteRenderer = newObject.GetComponent<SpriteRenderer>();
-            spriteRenderer.sprite = currentSprite;
-            spriteRenderer.color = currentColor;
+            spriteRenderer.sprite = brushSettings.CurrentSprite;
+            spriteRenderer.color = brushSettings.CurrentColor;
             spawnedObjects.Add(newObject);
         }
     }
@@ -96,16 +84,5 @@ public class SpriteObjectsManager : MonoBehaviour
             }
         }
         spawnedObjects.Clear();
-    }
-
-    public void SetActiveColor(Color color)
-    {
-        currentColor = color;
-        UpdateTrailColor();
-    }
-
-    public void SetActiveSprite(Sprite sprite)
-    {
-        currentSprite = sprite;
     }
 }

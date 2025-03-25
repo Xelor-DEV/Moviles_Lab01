@@ -7,8 +7,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Image[] colorButtons;
     [SerializeField] private Image[] spriteButtons;
 
-    [Header("References")]
-    [SerializeField] private SpriteObjectsManager spriteObjectsManager;
+    [Header("BrushSettings")]
+    [SerializeField] private BrushSettings brushSettings;
 
     private void Start()
     {
@@ -22,7 +22,11 @@ public class UIManager : MonoBehaviour
         {
             int index = i;
             Button btn = colorButtons[index].gameObject.GetComponent<Button>();
-            btn.onClick.AddListener(() => spriteObjectsManager.SetActiveColor(colorButtons[index].color));
+            btn.onClick.AddListener(() =>
+            {
+                brushSettings.CurrentColor = colorButtons[index].color;
+                brushSettings.UpdateTrailColor();
+            });
         }
     }
 
@@ -32,7 +36,7 @@ public class UIManager : MonoBehaviour
         {
             int index = i;
             Button btn = spriteButtons[index].GetComponent<Button>();
-            btn.onClick.AddListener(() => spriteObjectsManager.SetActiveSprite(spriteButtons[index].sprite));
+            btn.onClick.AddListener(() => brushSettings.CurrentSprite = spriteButtons[index].sprite);
         }
     }
 }
